@@ -1,0 +1,86 @@
+{% extends "website/layout.html" %}
+{% load static %}
+
+{% block title %}About Me{% endblock %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+    <div class="main-text-div" style="display: inline-block;">
+        <div class="page-title">
+            <h1 class="title non-rotate" style="text-align: center;">Greetings! I'm Mark Wang.</h1>
+        </div>
+
+        <div style="text-align: left;">
+            <p>Hey there! I'm Mark Wang.</p>
+            <br>
+            <p>Perhaps you know me by my online handles, such as <a class="link" href="https://github.com/ImRyzon">ImRyzon</a>.</p>
+            <br>
+            <p>I'm currently a Grade 12 Student attending Bayview Secondary School.</p>
+            <br>
+            <p>Since you're here, you might be interested in some of my <a class="link" href="/projects/1">projects</a> or my <a class="link" href="{% url 'resume' %}">résumé</a>.</p>
+            <br>
+            <p>I'm a passionate about various areas in Computer Science, such as Web Development, Algorithms & Data Structures, Artificial Intelligence, and Cybersecurity.</p>
+            <br>
+            <p>Here is a short list of some of my accomplishments throughout the years:</p>
+            <ul>
+                <li>Founder and President of <a class="link" href="https://linktr.ee/bayviewcsc">Bayview Cyber Security Club</a></li>
+                <li>Founder and President <a class="link" href="https://www.linkedin.com/company/cybernova-collective/">CyberNova Collective</a></li>
+                <li>Vice President of <a class="link" href="https://linktr.ee/bsscc">Bayview Computer Club</a></li>
+                <li>Organized <a class="link" href="https://ctf.jonathanw.dev/contest/bxmctf2023">BxMCTF 2023</a>, an international cybersecurity CTF competition with over $20,000 worth of prizes raised and over 3,500 participants.</li>
+                <li>Helped build and maintain <a class="link" href="https://bsscybersecurity.pythonanywhere.com/">Bayview CTF Online Judge</a></li>
+                <li>Taught programming to hundreds of students in organizations such as <a class="link" href="https://www.code4tomorrow.org/">Code 4 Tomorrow</a> and <a class="link" href="https://www.stemoftomorrow.org/">STEM of Tomorrow</a></li>
+                <li>Achieved Honour Roll in the <a class="link" href="https://cemc.uwaterloo.ca/contests/past_contests/CCCResults.pdf">2023 Canadian Computing Competition</a> (Senior Division)</li>
+            </ul>
+            <br>
+            <p>If you wish to contact me, my contact information can be found <a class="link" href="{% url 'contact' %}">here</a>.</p>
+        </div>
+    </div>
+
+    <div class="container" id="faq">
+        <div class="page-title" style="margin-top: 150px; margin-bottom: 50px;">
+            <h3 class="title non-rotate">Frequently Asked Questions</h3>
+        </div>
+
+        <div class="accordion accordion-flush">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    <b>What is your favorite programming language?</b>
+                </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        Every language except for Java.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    <b>When did you first start programming?</b>
+                </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        I first started programming around 5 years ago in middle school when I first learned Python from an online course. However, I really started to like programming and Computer Science in general when I was a high school freshman, which is when I took ICS2O, the Grade 10 Computer Science course at my school. Furthermore, around 1 year later, I started to become interested in competitive programming, which further ignited my passion's fire for programming.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    <b>Are you currently looking for volunteers/helpers for your organizations?</b>
+                </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        Yes! I am currently looking for web developers and CTF problem setters for both <a href="https://www.linkedin.com/company/cybernova-collective/">CyberNova Collective</a> and <a href="https://linktr.ee/bayviewcsc">Bayview Cyber Security Club</a>. If you are interested, feel free to <a href="{% url 'contact' %}">contact me</a>! Alternatively, you can shoot me a DM on Discord, my handle is <span style="color: blue;">"ryzon."</span> (with the period at the end!).
+                    </div>
+                </div>
+            </div>
+            <p style="margin-bottom: 150px"></p>
+        </div>
+    </div>
+{% endblock %}

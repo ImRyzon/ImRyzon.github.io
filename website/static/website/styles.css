@@ -1,0 +1,282 @@
+* {
+    font-family: "JetBrains Mono";
+}
+
+li {
+  margin: 10px 0;
+}
+
+td {
+    padding-top: 25px; 
+    padding-bottom:25px
+}
+
+i {
+    font-size: 55px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.form-control {
+    max-width: 1000px;
+}
+
+.blog-description {
+    margin: auto;
+    max-width: 1200px;
+}
+
+.blog-description * {
+    font-family: "Georgia";
+}
+
+.blog-description hr {
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.blog-image {
+    height: auto;
+    width: auto;
+    max-height: 600px;
+    margin-top: 35px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+}
+
+.link {
+  box-shadow: inset 0 0 0 0 blue;
+  color: blue;
+  padding: 0 .25rem;
+  margin: 0 -.25rem;
+  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.link:hover {
+  color: #fff;
+  box-shadow: inset 600px 0 0 0 blue;
+}
+
+.paginator-button {
+    display: inline-block;
+    border: 3px solid black;
+    border-radius: 5px;
+    background-color: white;
+    font-weight: bold;
+    margin-top: 75px;
+    margin-left: 25px;
+    margin-right: 25px;
+    padding: 10px;
+    height: 50px;
+    width: 125px;
+}
+
+.paginator-button:hover,
+.paginator-button:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
+.navbar {
+    font-size: 25px;
+}
+
+.navbar-brand {
+    font-size: 30px !important;
+}
+
+.body {
+    margin-top: 35px;
+    text-align: center;
+}
+
+.main-text-div {
+    margin-left: 5px;
+    max-width: 1000px;
+    word-wrap: break-word;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.comment-div {
+    border: 3px solid black;
+    border-radius: 10px;
+    font-weight: bold;
+    padding: 25px;
+}
+
+.contact-info {
+    margin-top: 500px;
+}
+
+.page-title {
+    display: inline-block;
+    text-align: center !important;
+}
+
+.title {
+    font-weight: bold;
+    margin-bottom: 75px;
+}
+
+.blog-info {
+    height: 25px;
+    margin-bottom: 20px;
+}
+
+.blog-info i {
+    font-size: 30px;
+    vertical-align: middle;
+}
+
+.blog-info span {
+    font-weight: bold;
+    margin-right: 50px;
+}
+
+.non-rotate {
+    letter-spacing: 5px;
+    border-right: 5px solid;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation:
+        typing 2s,
+        cursor .75s step-end infinite alternate;
+}
+
+@keyframes typing {
+    from { 
+        width: 0 
+    }
+}
+
+@keyframes cursor {
+    50% {
+        border-color: transparent 
+    }
+}
+
+.badges {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.badge-button {
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: white;
+    margin: 7px;
+}
+
+.textbar {
+    outline-color: black;
+    border: 1px solid black;
+    border-radius: 15px;
+    width: 50vw;
+    max-width: 750px;
+    height: 40px;
+    padding-left: 65px;
+    font-weight: bold;
+}
+
+.search-icon {
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.card-display {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.showcase-card {
+    border: 2px solid black !important;
+    border-radius: 8px !important;
+    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+    transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s 
+    -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.image {
+    width: 100%;
+    height: 275px;
+    object-fit: cover;
+}
+
+.accordion-body {
+    display: inline-block;
+    text-align: left;
+}
+
+.showcase-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+    cursor: pointer;
+}
+
+.search-icon > i {
+    font-size: 25px;
+    -webkit-text-stroke: 1px
+}
+
+.contact-info > a {
+    color: black;
+}
+
+.navbar-nav > li {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.navbar-nav > li > a {
+    line-height: 50px;
+}
+
+#about-me-a {
+    color: black; 
+    text-decoration: none;
+}
+
+#copyright-p {
+    font-family: "Arial";
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#faq {
+    margin-top: 150px;
+    max-width: 1200px;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+
+#comment-content {
+    resize: vertical;
+    vertical-align: top;
+}
+
+#contact-form b {
+    font-size: 18px;
+}

@@ -1,0 +1,49 @@
+{% extends "website/layout.html" %}
+{% load static %}
+
+{% block title %}Contact{% endblock %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+    <div class="page-title">
+        <h1 class="title non-rotate">Contact Form</h1>
+    </div>
+
+    <div class="mx-auto col-10 col-md-8 col-lg-6">
+        <form id="contact-form" action="https://formsubmit.co/imtheryzon@gmail.com" method="POST">
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label"><b>Full Name:</b></label>
+                <div class="col-sm-10">
+                    <input required type="text" name="name" class="form-control" placeholder="Enter Full Name">
+                </div>
+            </div>
+
+            <br> <br>
+
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label"><b>Email:</b></label>
+                <div class="col-sm-10">
+                    <input required type="email" name="email" class="form-control" placeholder="Enter Email">
+                </div>
+            </div>
+
+            <br> <br>
+
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label"><b>Content:</b></label>
+                <div class="col-sm-10">
+                    <textarea required name="message" class="form-control" rows="15" placeholder="Enter Content"></textarea>
+                </div>
+            </div>
+
+            <div class="hidden-inputs">
+                <input type="hidden" name="_subject" value="New Website Contact Form Submission">
+                <input type="hidden" name="_next" value="{% url 'contact' %}">
+            </div>
+
+            <button type="submit" class="paginator-button" style="width: 200px; height: 65px;"><b>Submit Form</b></button>
+        </form>
+    </div>
+{% endblock %}

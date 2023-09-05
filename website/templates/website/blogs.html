@@ -1,0 +1,98 @@
+{% extends "website/layout.html" %}
+{% load static %}
+
+{% block title %}Blogs{% endblock %}
+
+{% block head %}
+    <script>
+        var allBlogIds = [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const button = document.querySelector('.search-icon');
+            const textbar = document.querySelector('.textbar');
+
+            button.onclick = () => {
+                textbar.focus()
+            };
+
+            textbar.addEventListener('keydown', function(e) {
+                if (e.keyCode == 13) {
+                    if (textbar.value) {
+                        window.location.href = `/blogs/${textbar.value}/1`;
+                    } else {
+                        window.location.href = '/blogs/1';
+                    }
+                }
+            });
+        });
+
+        function redirect(link) {
+            window.location.href = link;
+        }
+
+        function add_id(id) {
+            allBlogIds.push(id);
+        }
+    </script>
+{% endblock %}
+
+{% block body %}
+    <div class="page-title">
+        <h1 class="title non-rotate">Blogs</h1>
+    </div>
+
+    <div class="search-bar">
+        <button class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <input type="text" class="textbar" placeholder="Search blog by title">
+    </div>
+
+    <div class="card-display">
+        {% if blogs %}
+            {% for blog in blogs %}
+                <div class="card showcase-card mb-3" style="width: 1200px;" onclick="redirect('/blog/{{ blog.id }}')">
+                    <img src="/static/website/images/{{ blog.image_path }}" class="image card-img-top" alt="..." style="height: 400px;">
+                    <div class="card-body">
+                        <p class="card-text card-title">{{ blog.title }}</p>
+                        <p class="card-text">{{ blog.description }}</p>
+                        <p class="card-text"><small class="text-body-secondary">{{ blog.date }}</small></p>
+                    </div>
+                </div>
+                <script>
+                    add_id(parseInt("{{ blog.id }}"));
+                </script>
+            {% endfor %}
+        {% else %}
+            {% if query %}
+                <h3 style="font-weight: bold; margin-top: 50px;">No results found, try checking your spelling.</h3>
+            {% else %}
+                <h3 style="font-weight: bold; margin-top: 50px;">Sorry, nothing to find here just yet :(</h3>
+            {% endif %}
+        {% endif %}
+    </div>
+
+    {% if query %}
+        {% if blogs.has_previous %}
+            <button class="paginator-button" onclick="(() => window.location.href = '/blogs/{{ query }}/{{ blogs.previous_page_number }}')()">Previous</button>
+        {% else %}
+            <button class="paginator-button" disabled>Previous</button>
+        {% endif %}
+
+        {% if blogs.has_next %}
+            <button class="paginator-button" onclick="(() => window.location.href = '/blogs/{{ query }}/{{ blogs.next_page_number }}')()">Next</button>
+        {% else %}
+            <button class="paginator-button" disabled>Next</button>
+        {% endif %}
+    {% else %}
+        {% if blogs.has_previous %}
+            <button class="paginator-button" onclick="(() => window.location.href = '/blogs/{{ blogs.previous_page_number }}')()">Previous</button>
+        {% else %}
+            <button class="paginator-button" disabled>Previous</button>
+        {% endif %}
+
+        {% if blogs.has_next %}
+            <button class="paginator-button" onclick="(() => window.location.href = '/blogs/{{ blogs.next_page_number }}')()">Next</button>
+        {% else %}
+            <button class="paginator-button" disabled>Next</button>
+        {% endif %}
+    {% endif %}
+{% endblock %}
