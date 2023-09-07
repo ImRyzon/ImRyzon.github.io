@@ -12,12 +12,12 @@
         <h1 class="title non-rotate">Projects</h1>
     </div>
 
-    <div class="search-bar">
+    <div class="search-bar container">
         <button class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></button>
-        <input type="text" class="textbar" placeholder="Search project by title">
+        <input type="text" class="textbar" placeholder="Search project">
     </div>
 
-    <div class="card-display">
+    <div class="card-display container">
         {% if projects %}
             {% for project in projects %}
                 <div class="card showcase-card" style="max-width: 30rem;" onclick="redirect('{{ project.link }}')">

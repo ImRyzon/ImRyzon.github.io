@@ -12,12 +12,12 @@
         <h1 class="title non-rotate">Blogs</h1>
     </div>
 
-    <div class="search-bar">
+    <div class="search-bar container">
         <button class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></button>
-        <input type="text" class="textbar" placeholder="Search blog by title">
+        <input type="text" class="textbar" placeholder="Search blog">
     </div>
 
-    <div class="card-display">
+    <div class="card-display container">
         {% if blogs %}
             {% for blog in blogs %}
                 <div class="card showcase-card mb-3" style="width: 1200px;" onclick="redirect('/blog/{{ blog.id }}')">

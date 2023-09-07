@@ -1,5 +1,6 @@
 * {
     font-family: "JetBrains Mono";
+    overflow-wrap: break-word !important;
 }
 
 li {
@@ -137,11 +138,13 @@ i {
 }
 
 .non-rotate {
+    display: flex;
     letter-spacing: 5px;
     border-right: 5px solid;
     width: 100%;
     white-space: nowrap;
     overflow: hidden;
+    overflow-wrap: break-word;
     animation:
         typing 2s,
         cursor .75s step-end infinite alternate;
