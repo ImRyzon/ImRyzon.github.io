@@ -70,7 +70,7 @@ function showForm(comment_id, sourcePing, parent_id) {
     } else {
         formHTML =
         `
-        <div id="reply-div-${comment_id}" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 95%; background-color: gray; border: 3px solid black; border-radius: 10px; padding-top: 50px;">
+        <div class="fade-in" id="reply-div-${comment_id}" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 95%; background-color: white; border: 3px solid black; border-radius: 10px; padding-top: 50px;">
             <a class="me-3" href="#">
                 <img class="rounded-circle shadow-1-strong"
                     src="/static/website/images/default-pfp.png" alt="avatar"
