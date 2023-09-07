@@ -46,7 +46,7 @@ function showForm(comment_id, sourcePing, parent_id) {
         <a class="me-3" href="#">
             <img class="rounded-circle shadow-1-strong"
                 src="/static/website/images/default-pfp.png" alt="avatar"
-                width="65" height="65" />
+                width="65" height="65"/>
         </a>
         <div class="flex-grow-1 flex-shrink-1" style="border: 1px solid black; border-radius: 10px;">
             <div>

@@ -26,6 +26,11 @@
     }
 }
 
+textarea {
+    width: 100% !important;
+    height: 100% !important;
+}
+
 * {
     font-family: "JetBrains Mono";
     overflow-wrap: break-word !important;
@@ -126,8 +131,8 @@ i {
 
 .paginator-button:hover,
 .paginator-button:focus {
-  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-  transform: translateY(-0.25em);
+    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+    transform: translateY(-0.25em);
 }
 
 .navbar {
@@ -298,8 +303,8 @@ i {
 }
 
 .navbar-nav > li {
-  padding-left: 10px;
-  padding-right: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .navbar-nav > li > a {

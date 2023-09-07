@@ -102,26 +102,29 @@
                                 <h1 class="text-center mb-4 pb-2" style="font-weight: bold;">Comments Section</h1>
                                 <form id="comment-form" style="margin-top: 50px; margin-bottom: 50px;">
                                     <div class="comment-div">
-                                        <h3>Create Comment</h3>
-                                        <br> <br>
-
-                                        <div>
-                                            <span style="margin-right: 50px;">First name:</span>
-                                            <input required id="comment-first-name" minlength="2" type="text" placeholder="Enter first name">
+                                        <div class="row mb-3">
+                                            <label class="col-sm-3 col-form-label"><b>First Name:</b></label>
+                                            <div class="col-sm-9">
+                                                <input required id="comment-first-name" minlength="2" type="text" placeholder="Enter first name">
+                                            </div>
                                         </div>
 
                                         <br> <br>
 
-                                        <div>
-                                            <span style="margin-right: 57px;">Last name:</span>
-                                            <input required id="comment-last-name" minlength="2" type="text" placeholder="Enter last name">
+                                        <div class="row mb-3">
+                                            <label class="col-sm-3 col-form-label"><b>Last Name:</b></label>
+                                            <div class="col-sm-9">
+                                                <input required id="comment-last-name" minlength="2" type="text" placeholder="Enter last name">
+                                            </div>
                                         </div>
 
                                         <br> <br>
 
-                                        <div style="vertical-align: center;">
-                                            <span style="margin-right: 25px;">Content:</span>
-                                            <textarea required rows="5" cols="45" minlength="2" id="comment-content" placeholder="Enter content"></textarea>
+                                        <div class="row mb-3">
+                                            <label class="col-sm-3 col-form-label"><b>Content:</b></label>
+                                            <div class="col-sm-9">
+                                                <textarea required rows="5" minlength="2" id="comment-content" placeholder="Enter content"></textarea>
+                                            </div>
                                         </div>
 
                                         <input id="comment-submit" type="submit" value="Comment" class="paginator-button">
