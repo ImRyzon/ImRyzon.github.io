@@ -10,7 +10,7 @@
     }
 
     .textbar {
-        width: 100%;
+        width: 100% !important;
     }
 
     .blog-info {
