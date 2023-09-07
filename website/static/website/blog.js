@@ -40,29 +40,59 @@ function showForm(comment_id, sourcePing, parent_id) {
     const formDiv = document.createElement('div');
     formDiv.setAttribute('id', `form-div-${comment_id}`);
 
-    const formHTML = 
-    `
-    <div class="d-flex flex-start mt-4" id="reply-div-${comment_id}">
-        <a class="me-3" href="#">
-            <img class="rounded-circle shadow-1-strong"
-                src="/static/website/images/default-pfp.png" alt="avatar"
-                width="65" height="65"/>
-        </a>
-        <div class="flex-grow-1 flex-shrink-1" style="border: 1px solid black; border-radius: 10px;">
-            <div>
-                <form onsubmit="createReply(event, ${comment_id}, ${parent_id})" id="reply-form-${comment_id}" data-parent="${parent_id}" style="margin: 25px;">
-                    <input required id="comment-first-name-${comment_id}" minlength="2" type="text" placeholder="Enter first name">
-                    <input required id="comment-last-name-${comment_id}" minlength="2" type="text" placeholder="Enter last name">
-                    <textarea required rows="5" cols="46" minlength="2" id="comment-content-${comment_id}" placeholder="Enter content" style="margin-top: 20px;">@${sourcePing}</textarea>
-                    <div style="display: inline-block;">
-                        <input type="submit" value="Reply" class="paginator-button" style="margin-top: 30px; margin-bottom: 15px;">
-                        <button class="paginator-button" style="margin-top: 30px; margin-bottom: 15px;" onclick="(() => document.getElementById('reply-div-${comment_id}').remove())()">Cancel</button>
-                    </div>
-                <form/>
+    const width = window.innerWidth;
+    let formHTML;
+
+    if (width > 600) {
+        formHTML = 
+        `
+        <div class="d-flex flex-start mt-4" id="reply-div-${comment_id}">
+            <a class="me-3" href="#">
+                <img class="rounded-circle shadow-1-strong"
+                    src="/static/website/images/default-pfp.png" alt="avatar"
+                    width="65" height="65"/>
+            </a>
+            <div class="flex-grow-1 flex-shrink-1" style="border: 1px solid black; border-radius: 10px;">
+                <div>
+                    <form onsubmit="createReply(event, ${comment_id}, ${parent_id})" id="reply-form-${comment_id}" data-parent="${parent_id}" style="margin: 25px;">
+                        <input required id="comment-first-name-${comment_id}" minlength="2" type="text" placeholder="Enter first name">
+                        <input required id="comment-last-name-${comment_id}" minlength="2" type="text" placeholder="Enter last name">
+                        <textarea required rows="5" cols="46" minlength="2" id="comment-content-${comment_id}" placeholder="Enter content" style="margin-top: 20px;">@${sourcePing}</textarea>
+                        <div style="display: inline-block;">
+                            <input type="submit" value="Reply" class="paginator-button" style="margin-top: 30px; margin-bottom: 15px;">
+                            <button class="paginator-button" style="margin-top: 30px; margin-bottom: 15px;" onclick="(() => document.getElementById('reply-div-${comment_id}').remove())()">Cancel</button>
+                        </div>
+                    <form/>
+                </div>
             </div>
         </div>
-    </div>
-    `;
+        `;
+    } else {
+        formHTML =
+        `
+        <div id="reply-div-${comment_id}" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 95%; background-color: gray; border: 3px solid black; border-radius: 10px; padding-top: 50px;">
+            <a class="me-3" href="#">
+                <img class="rounded-circle shadow-1-strong"
+                    src="/static/website/images/default-pfp.png" alt="avatar"
+                    width="65" height="65"/>
+            </a>
+            <div class="flex-grow-1 flex-shrink-1">
+                <div>
+                    <form onsubmit="createReply(event, ${comment_id}, ${parent_id})" id="reply-form-${comment_id}" data-parent="${parent_id}" style="margin: 25px;">
+                        <input required id="comment-first-name-${comment_id}" minlength="2" type="text" placeholder="Enter first name">
+                        <input required id="comment-last-name-${comment_id}" minlength="2" type="text" placeholder="Enter last name">
+                        <textarea required rows="5" cols="46" minlength="2" id="comment-content-${comment_id}" placeholder="Enter content" style="margin-top: 20px;">@${sourcePing}</textarea>
+                        <div style="display: inline-block;">
+                            <input type="submit" value="Reply" class="paginator-button" style="margin-top: 30px; margin-bottom: 15px;">
+                            <button class="paginator-button" style="margin-top: 30px; margin-bottom: 15px;" onclick="(() => document.getElementById('reply-div-${comment_id}').remove())()">Cancel</button>
+                        </div>
+                    <form/>
+                </div>
+            </div>
+        </div>
+        `;
+    }
+
     formDiv.innerHTML = formHTML;
 
     const secondaryDiv = document.getElementById(`${parent_id}`);
