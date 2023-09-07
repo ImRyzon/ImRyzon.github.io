@@ -1,9 +1,12 @@
 @media screen and (max-width: 600px) {
     .non-rotate {
-        white-space: normal;
-        animation:
-            typing 2s,
-            cursor .75s step-end infinite alternate;
+        white-space: normal !important;
+    }
+
+    @keyframes typing {
+        from {
+            width: auto;
+        }
     }
 
     .textbar {
@@ -194,6 +197,7 @@ i {
 
 .non-rotate {
     display: flex;
+    flex-wrap: wrap;
     letter-spacing: 5px;
     width: 100%;
     white-space: nowrap;
