@@ -342,6 +342,7 @@ i {
 }
 
 #faq {
+    width: 95%;
     margin-top: 150px;
     max-width: 1200px;
     border: 2px solid black;
