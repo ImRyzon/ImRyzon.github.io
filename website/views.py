@@ -143,3 +143,7 @@ def get_replies(request, comment_id):
     replies = Comment.objects.get(pk=comment_id).replies.filter(is_active=True, is_reply=True).order_by("-date").all()
 
     return JsonResponse([reply.serialize() for reply in replies], safe=False)
+
+
+def js(request):
+    return render(request, "website/js.html")

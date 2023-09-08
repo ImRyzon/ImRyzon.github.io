@@ -13,6 +13,7 @@ urlpatterns = [
     path("blogs/<str:query>/<int:page>", views.blog_search, name="blog-search"),
     path("contact", views.contact, name="contact"),
     path("logout", views.logout_view, name="logout"),
+    path("js", views.js, name="js"),
 
     # API routes
     path("project/<int:id>", views.get_project, name="get-project"),
