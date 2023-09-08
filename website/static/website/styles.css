@@ -205,7 +205,7 @@ i {
     overflow: hidden;
     animation:
         typing 2s,
-        cursor .75s step-end infinite alternate;
+        cursor .5s step-end infinite alternate;
 }
 
 @keyframes typing {
