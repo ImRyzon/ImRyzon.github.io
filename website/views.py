@@ -160,3 +160,32 @@ def project_form(request):
 @login_required
 def blog_form(request):
     return render(request, "website/create-blog.html")
+
+
+@login_required
+@csrf_exempt
+def create_project(request):
+    if request.method != "POST":
+        return JsonResponse({"error": "Bad request."}, status=400)
+    
+    data = json.loads(request.body)
+    title = data.get("title")
+    description = data.get("description")
+    image_path = data.get("imagePath")
+    badges = data.get("badges")
+    project_link = data.get("projectLink")
+    in_progress = data.get("inProgress")
+
+    project = Project(
+        title=title,
+        description=description,
+        image_path=image_path,
+        in_progress=in_progress,
+        link=project_link
+    )
+    project.save()
+
+    for badge in badges:
+        project.badges.add(Badge.objects.get(badge=badge))
+
+    return JsonResponse({"message": "Project created successfully."}, status=200)

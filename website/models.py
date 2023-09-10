@@ -28,7 +28,7 @@ BADGE_CHOICES = (
 
 
 class Badge(models.Model):
-    badge = models.CharField(max_length=32, default=None, choices=BADGE_CHOICES)
+    badge = models.CharField(max_length=32, default=None, choices=BADGE_CHOICES, unique=True)
 
     def __str__(self):
         return f"{self.badge}"

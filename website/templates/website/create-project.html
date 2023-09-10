@@ -4,6 +4,7 @@
 {% block title %}Create Project{% endblock %}
 
 {% block head %}
+    <script src="{% static 'website/create-project.js' %}"></script>
 {% endblock %}
 
 {% block body %}
@@ -12,7 +13,7 @@
     </div>
 
     <div class="mx-auto col-10 col-md-8 col-lg-6">
-        <form class="custom-form">
+        <form class="custom-form" id="create-project-form">
             <div class="row mb-3">
                 <label class="col-sm-2 col-form-label"><b>Title:</b></label>
                 <div class="col-sm-10">
@@ -43,7 +44,7 @@
             <div class="row mb-3">
                 <label class="col-sm-2 col-form-label"><b>Badges:</b></label>
                 <div class="col-sm-10">
-                    <select multiple class="form-select form-select-lg mb-3">
+                    <select multiple class="form-select form-select-lg mb-3" id="form-badges">
                         {% for badge in badge_choices %}
                             <option value="{{ badge }}">{{ badge }}</option>
                         {% endfor %}
@@ -64,10 +65,8 @@
 
             <div class="row mb-3">
                 <label class="col-sm-2 col-form-label"><b>In Progress:</b></label>
-                <div class="col-sm-10">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="in-progress">
-                    </div>
+                <div class="col-sm-10 form-check">
+                    <input class="form-check-input" type="checkbox" id="form-in-progress">
                 </div>
             </div>
 
