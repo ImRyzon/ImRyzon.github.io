@@ -94,7 +94,7 @@ I believe that this project is sufficiently complex compared to the other projec
 
 2. Ensure all the necessary packages from the ```requirements.txt``` file are installed properly.
 
-3. In a terminal, ```cd``` into the ```ImRyzon``` directory.
+3. In a terminal, ```cd``` into the main directory.
 
 4. Run ```python manage.py makemigrations website``` to make migrations for the app.
 
