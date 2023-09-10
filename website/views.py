@@ -189,3 +189,30 @@ def create_project(request):
         project.badges.add(Badge.objects.get(badge=badge))
 
     return JsonResponse({"message": "Project created successfully."}, status=200)
+
+
+@login_required
+@csrf_exempt
+def create_blog(request):
+    if request.method != "POST":
+        return JsonResponse({"error": "Bad request."}, status=400)
+    
+    data = json.loads(request.body)
+    title = data.get("title")
+    description = data.get("description")
+    content = data.get("content")
+    approx_length_min = data.get("approxLength")
+    image_path = data.get("imagePath")
+    is_active = data.get("isActive")
+
+    blog = Blog(
+        title=title,
+        description=description,
+        content=content,
+        approx_length_min=approx_length_min,
+        image_path=image_path,
+        is_active=is_active
+    )
+    blog.save()
+
+    return JsonResponse({"message": "Blog created successfully."}, status=200)

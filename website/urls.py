@@ -25,4 +25,5 @@ urlpatterns = [
     path("create-reply/<int:comment_id>", views.create_reply, name="create-reply"),
     path("replies/<int:comment_id>", views.get_replies, name="get-replies"),
     path("create-project", views.create_project, name="create-project"),
+    path("create-blog", views.create_blog, name="create-blog")
 ]

@@ -90,7 +90,7 @@ class Blog(models.Model):
     date = models.DateField(auto_now_add=True)
     approx_length_min = models.IntegerField(default=5)
     image_path = models.CharField(max_length=64)
-    comments = models.ManyToManyField(Comment, blank=True, related_name="blogs")
+    comments = models.ManyToManyField(Comment, default=None, blank=True, related_name="blogs")
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
