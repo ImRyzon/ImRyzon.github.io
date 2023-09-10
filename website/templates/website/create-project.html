@@ -1,0 +1,77 @@
+{% extends "website/layout.html" %}
+{% load static %}
+
+{% block title %}Create Project{% endblock %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+    <div class="page-title">
+        <h1 class="title non-rotate">Create Project</h1>
+    </div>
+
+    <div class="mx-auto col-10 col-md-8 col-lg-6">
+        <form class="custom-form">
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label"><b>Title:</b></label>
+                <div class="col-sm-10">
+                    <input id="form-title" required type="text" class="form-control" placeholder="Enter Title">
+                </div>
+            </div>
+
+            <br> <br>
+
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label"><b>Description:</b></label>
+                <div class="col-sm-10">
+                    <textarea id="form-description" required class="form-control" rows="15" placeholder="Enter Description"></textarea>
+                </div>
+            </div>
+
+            <br> <br>
+
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label"><b>Image Path:</b></label>
+                <div class="col-sm-10">
+                    <input id="form-path" required type="text" class="form-control" placeholder="Enter Image Path">
+                </div>
+            </div>
+
+            <br> <br>
+
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label"><b>Badges:</b></label>
+                <div class="col-sm-10">
+                    <select multiple class="form-select form-select-lg mb-3">
+                        {% for badge in badge_choices %}
+                            <option value="{{ badge }}">{{ badge }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+
+            <br> <br>
+
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label"><b>Project Link:</b></label>
+                <div class="col-sm-10">
+                    <input id="form-link" required type="text" class="form-control" placeholder="Enter Project Link">
+                </div>
+            </div>
+
+            <br> <br>
+
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label"><b>In Progress:</b></label>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="in-progress">
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="paginator-button" style="width: 200px; height: 65px;"><b>Create Project</b></button>
+        </form>
+    </div>
+{% endblock %}

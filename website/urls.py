@@ -14,6 +14,8 @@ urlpatterns = [
     path("contact", views.contact, name="contact"),
     path("logout", views.logout_view, name="logout"),
     path("js", views.js, name="js"),
+    path("create/project", views.project_form, name="project-form"),
+    path("create/blog", views.blog_form, name="blog-form"),
 
     # API routes
     path("project/<int:id>", views.get_project, name="get-project"),

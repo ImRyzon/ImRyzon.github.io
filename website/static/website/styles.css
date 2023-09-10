@@ -291,6 +291,11 @@ i {
     text-align: left;
 }
 
+.form-check {
+    display: inline-block;
+    text-align: left;
+}
+
 .fade-in {
     animation: fadeIn ease 0.5s;
     animation-iteration-count: 1;
@@ -330,6 +335,10 @@ i {
     line-height: 50px;
 }
 
+.custom-form b {
+    font-size: 18px;
+}
+
 #about-me-a {
     color: black; 
     text-decoration: none;
@@ -352,8 +361,4 @@ i {
 #comment-content {
     resize: vertical;
     vertical-align: top;
-}
-
-#contact-form b {
-    font-size: 18px;
 }

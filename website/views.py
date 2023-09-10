@@ -6,6 +6,7 @@ from django.shortcuts import render
 from django.urls import reverse
 from django.core.paginator import Paginator
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.decorators import login_required
 
 from .models import *
 
@@ -147,3 +148,15 @@ def get_replies(request, comment_id):
 
 def js(request):
     return render(request, "website/js.html")
+
+
+@login_required
+def project_form(request):
+    return render(request, "website/create-project.html", {
+        "badge_choices" : [badge[0] for badge in BADGE_CHOICES]
+    })
+
+
+@login_required
+def blog_form(request):
+    return render(request, "website/create-blog.html")
