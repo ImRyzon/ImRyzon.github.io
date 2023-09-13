@@ -90,7 +90,7 @@ I believe that this project is sufficiently complex compared to the other projec
 
 # Running the Application
 
-1. In a terminal, ```git clone``` the contents of ```https://github.com/me50/ImRyzon/tree/web50/projects/2020/x/capstone```.
+1. In a terminal, ```git clone``` the contents of ```https://github.com/ImRyzon/Website```.
 
 2. Ensure all the necessary packages from the ```requirements.txt``` file are installed properly.
 
