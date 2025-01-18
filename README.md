@@ -66,7 +66,7 @@ Lastly, the website uses various CSS animations on multiple different elements o
 
 - ```requirements.txt```: File which contains all the necessary libraries needed to install in order for this website to run properly.
 
-# Running the Application
+# Running the Application (Locally)
 
 1. In a terminal, ```git clone``` the contents of ```https://github.com/ImRyzon/Website```.
 
